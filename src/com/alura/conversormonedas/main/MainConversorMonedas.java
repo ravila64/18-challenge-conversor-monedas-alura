@@ -6,8 +6,10 @@ import com.alura.conversormonedas.model.Pais;
 import com.alura.conversormonedas.view.MenuReportes;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class MainConversorMonedas {
@@ -16,7 +18,12 @@ public class MainConversorMonedas {
         Scanner leer = new Scanner(System.in);
         List<Pais> listaPaises = menu.cargarPaises();
         RutinasPais busqueda = new RutinasPais();
-
+        String codeMoney1 = "COP";
+        String codeMoney2 = "USD";
+        double factor = 0;
+        double valorConvertir, totalConversion = 0;
+        String moneda1, moneda2 = "";
+        String strSalida = "";
         int opc = 0;
         String paisFuente = "COP";
         String paisDestino = "USD";
@@ -38,28 +45,57 @@ public class MainConversorMonedas {
                     break;
                 }
                 case 2: {
-                    //leer = new Scanner(System.in);
                     leer.nextLine(); // consume entrada invalida
                     System.out.print("Digite Pais Fuente :");
                     paisFuente = leer.nextLine();
-                    paisFuente = paisFuente.toLowerCase().trim();
-                    paisFuente = paisFuente.substring(0,1).toUpperCase()+paisFuente.substring(1);
-                    // falta rutina capital case para nombres compuestos
-                    Pais paisOrigen = new Pais();
-                    paisOrigen = busqueda.busquedaPais(listaPaises,paisFuente);
-                    System.out.println(paisOrigen.toString());
-                    if (paisOrigen.getCountry()==null){
-                        System.out.println("Pais "+paisFuente+" no existe en tabla de conversion");
+                    paisFuente = busqueda.toCamelCase(paisFuente.toLowerCase().trim());
+
+                    Pais paisOD = new Pais();
+                    paisOD = busqueda.busquedaPais(listaPaises, paisFuente);
+                    System.out.println(paisOD.toString());
+                    if (paisOD.getCountry() == null) {
+                        System.out.println("Pais " + paisFuente + ", No existe en tabla de conversion");
                         break;
+                    } else {
+                        codeMoney1 = paisOD.getCodeCurrency();
+                        paisFuente = paisOD.getCountry();
+                        moneda1 = paisOD.getCurrencyName();
+                        System.out.println("Codigo moneda :" + codeMoney1 + ", pais :" + paisFuente);
                     }
-                    // BUSCAR PAIS FUENTE, traer codigo
-                    System.out.print(" A MONEDA de Pais destino :");
+                    System.out.print("Convertir a MONEDA de Pais destino :");
                     paisDestino = leer.nextLine();
-                    // BUSCAR PAIS DESTINO traer codigo
+                    paisDestino = busqueda.toCamelCase(paisDestino.toLowerCase().trim());
+                    paisOD = busqueda.busquedaPais(listaPaises, paisDestino);
+                    System.out.println(paisOD.toString());
+                    if (paisOD.getCountry() == null) {
+                        System.out.println("Pais " + paisDestino + ", No existe en tabla de conversion");
+                        break;
+                    } else {
+                        codeMoney2 = paisOD.getCodeCurrency();
+                        paisDestino = paisOD.getCountry();
+                        moneda2 = paisOD.getCurrencyName();
+                        System.out.println("A Codigo moneda :" + codeMoney2 + ", pais :" + paisDestino);
+                    }
+                    if (!Objects.equals(codeMoney1, codeMoney2)) {
+                        try {
+                            System.out.println("Valor a convertir");
+                            valorConvertir = leer.nextDouble();
+                            factor = busqueda.factorConversion(codeMoney1, codeMoney2);
+                            totalConversion = valorConvertir * factor;
+                            strSalida = "Conversion " + valorConvertir + " " + moneda1 + " son ";
+                            strSalida += totalConversion + " " + moneda2;
+                            System.out.println(strSalida);
+                        } catch (IOException | InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    } else {
+                        System.out.println("Digito paises iguales, seleccione diferentes !!!");
+                    }
                     break;
                 }
                 case 9:
                     break;
+
             } //endcase
         } //endwhile
     }

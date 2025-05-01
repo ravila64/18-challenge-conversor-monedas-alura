@@ -16,7 +16,6 @@ public class MenuReportes {
         Gson gson = new Gson();
         File file = new File("src/com/alura/conversormonedas/data/monedapais.json");
         FileReader reader;
-
         {
             try {
                 reader = new FileReader(file);
@@ -27,8 +26,8 @@ public class MenuReportes {
 
         Type listType = new TypeToken<List<Pais>>() {
         }.getType();
-        List<Pais> listaMonedas = gson.fromJson(reader, listType);
-        return  listaMonedas;
+       // List<Pais> listaMonedas = gson.fromJson(reader, listType);
+        return  gson.fromJson(reader, listType);  // estaba listaMonedas;
     }
 
     public void mostrarOpciones() {
