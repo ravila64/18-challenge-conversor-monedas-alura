@@ -17,7 +17,6 @@ public class MainConversorMonedas {
    public static void main(String[] args) throws FileNotFoundException {
       MenuReportes menu = new MenuReportes();
       Scanner leer = new Scanner(System.in);
-
       List<Pais> listaPaises = menu.cargarPaises();
       RutinasPais busqueda = new RutinasPais();
       String codeMoney1 = "COP";
@@ -105,5 +104,4 @@ public class MainConversorMonedas {
          } //endcase
       } //endwhile
    }
-
 }

@@ -4,7 +4,6 @@ import com.alura.conversormonedas.model.Currency;
 import com.alura.conversormonedas.model.Pais;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -72,8 +71,6 @@ public class RutinasPais {
 
     public void calcularConversion(double valorConvertir, double factor, String moneda1, String moneda2, String code1, String code2 ){
         double totalConversion = valorConvertir * factor;
-        //String str  = "Conversion " + valorConvertir + " "+code1+" "+ moneda1 + " son ";
-        //str += totalConversion + " "+code2+" "+moneda2;
         String str = "Conversion %.2f  %s   %s son %.2f  %s %s ";
         System.out.printf(str,valorConvertir, code1, moneda1, totalConversion, code2, moneda2).toString();
     }
