@@ -35,7 +35,7 @@ public class MenuReportes {
         System.out.println("1. Listado paises incluidos para conversión");
         System.out.println("2. Conversión de monedas");
         System.out.println("9. Salir");
-        System.out.print("Digite opción [1..2] o [9.Salir]");
+        System.out.print("Digite opción [1..2] o [9.Salir] ");
     }
 
     public void listarJsonDePaises( List<Pais> lista) {

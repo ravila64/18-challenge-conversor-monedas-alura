@@ -94,6 +94,7 @@ public class MainConversorMonedas {
                     break;
                 }
                 case 9:
+                    leer.close();
                     break;
 
             } //endcase
