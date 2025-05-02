@@ -11,6 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
+import java.util.Scanner;
 
 public class RutinasPais {
 
@@ -67,6 +68,22 @@ public class RutinasPais {
         Currency result = gson.fromJson(json, Currency.class);
         System.out.println("Result :"+result);
         return result.conversion_rate();
+    }
+
+    public void calcularConversion(double valorConvertir, double factor, String moneda1, String moneda2, String code1, String code2 ){
+        double totalConversion = valorConvertir * factor;
+        //String str  = "Conversion " + valorConvertir + " "+code1+" "+ moneda1 + " son ";
+        //str += totalConversion + " "+code2+" "+moneda2;
+        String str = "Conversion %.2f  %s   %s son %.2f  %s %s ";
+        System.out.printf(str,valorConvertir, code1, moneda1, totalConversion, code2, moneda2).toString();
+    }
+
+    public String leerPais(String complemento){
+        Scanner leer = new Scanner(System.in);
+        System.out.print("Digite Pais "+complemento+" :");
+        String pais = leer.nextLine();
+        pais = this.toCamelCase(pais.toLowerCase().trim());
+        return pais;
     }
 
 }
