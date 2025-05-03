@@ -2,13 +2,14 @@
 
 <em> # TEMATICA </em>
 
-1. Descripción proyecto
-2. Funcionalidad
-3. Como pueden usarlo los usurios
-4. Donde pueden encontrar ayuda los usuarios
-5. Autor(s) del proyecto
+##Indice
 
-<h2>DESCRIPCION DEL PROYECTO </h2>
+[Descripción proyecto](#descripción-proyecto) \
+[Como usar el programa](#como-usar-el-programa) \
+[Ayuda para usuarios](#ayuda-para-usuarios) \
+[Autores del proyecto](#autores-del-proyecto)
+
+<h2>Descripción proyecto</h2>
 
 Construir tu propio Conversor de Monedas.
 Aprenderás a realizar solicitudes a una API de tasas de cambio, a manipular datos JSON y,
@@ -20,17 +21,16 @@ B) Creación del Proyecto;
 C) Consumo de la API;
 D) Análisis de la Respuesta JSON;
 E) Filtro de Monedas;
-F) Exibición de Resultados a los usuarios;
-
-<h2>FUNCIONALIDAD</h2>
+F) Exibición de Resultados a los usuarios
+<h2>Como usar el programa</h2>
 ----------------------------
-****Conversor de monedas****
+**Conversor de monedas**
 1. Listado paises incluidos para conversión
 2. Conversión de monedas
 3. Listar paises con nombres similares
 9. Salir
 
-Digite opción [1..3] o [9.Salir]
+Digite opción [1..3] o [9.Salir] 1
 
 <h3>Al seleccionar opcion 1. Sale un listado asi:</h3>
 
@@ -43,35 +43,29 @@ Digite opción [1..3] o [9.Salir]
 31-(COP)=Colombia *|* 32-(CRC)=Costa Rica *|* 33-(CUP)=Cuba *|* 34-(CVE)=Cape Verde *|* 35-(CZK)=Czech Republic *|* _
 asi.. hasta completar los paises, que maneja la API.
 
-<h3>opcion #2. Conversion de monedas</h3>
+<h3>opcion 2. Conversion de monedas</h3>
+Digite opción [1..3] o [9.Salir] 2
 
-Digite Pais Fuente :colombia
+Digite Pais Fuente :colombia \
+Pais{codeCurrency='COP', currencyName='Colombian Peso', country='Colombia'} \
+Codigo moneda :COP, pais :Colombia \
+Digite Pais Destino :estados unidos \
+Pais{codeCurrency='USD', currencyName='United States Dollar', country='Estados Unidos'} \
+A Codigo moneda :USD, pais :Estados Unidos \
+Valor a convertir, en COP :500000 
 
-Pais{codeCurrency='COP', currencyName='Colombian Peso', country='Colombia'}
+API Key: Verified \
+Result :Currency[base_code=COP, target_code=USD, conversion_rate=2.3622E-4] \
+Conversion 500000,00  COP   Colombian Peso son 118,11  USD United States Dollar \
 
-Codigo moneda :COP, pais :Colombia
+<h3>Opcion 3. Listar paises con nombres similares</h3> 
 
-Digite Pais Destino :estados unidos
+Dígite Pais con nombres similiares :pa
 
-Pais{codeCurrency='USD', currencyName='United States Dollar', country='Estados Unidos'}
+**Paises con nombres similares** \
+->Panama PAB \
+->Papua New Guinea PGK \
+->Pakistan PKR \
+->Paraguay PYG 
 
-A Codigo moneda :USD, pais :Estados Unidos
-
-Valor a convertir, en COP :500000
-
-API Key: Verified
-Result :Currency[base_code=COP, target_code=USD, conversion_rate=2.3622E-4]
-
-Conversion 500000,00  COP   Colombian Peso son 118,11  USD United States Dollar  
-
-<h3>opcion #3. Listar paises con nombres similares</h3>
-
-igite Pais con nombres similiares :pa
-
-**Paises con nombres similares**
-
-->Panama PAB
-->Papua New Guinea PGK
-->Pakistan PKR
-->Paraguay PYG
 

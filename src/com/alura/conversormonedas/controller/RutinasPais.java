@@ -1,6 +1,7 @@
 package com.alura.conversormonedas.controller;
 
 import com.alura.conversormonedas.model.Currency;
+import com.alura.conversormonedas.model.Moneda;
 import com.alura.conversormonedas.model.Pais;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,6 +10,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -70,9 +73,21 @@ public class RutinasPais {
     }
 
     public void calcularConversion(double valorConvertir, double factor, String moneda1, String moneda2, String code1, String code2 ){
+        LocalDateTime fechaHoraActual = LocalDateTime.now();
+        // Puedes formatear la fecha y hora como prefieras
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String fechaHoraCadena = fechaHoraActual.format(formato);
+        MovimientosDiarios grabaMvtos = new MovimientosDiarios();
         double totalConversion = valorConvertir * factor;
         String str = "Conversion %.2f  %s   %s son %.2f  %s %s ";
         System.out.printf(str,valorConvertir, code1, moneda1, totalConversion, code2, moneda2).toString();
+        Moneda moneda = new Moneda(code1,code2, factor, valorConvertir, totalConversion, fechaHoraCadena);
+        boolean diarioOk= grabaMvtos.leerMovimientos();
+        if(diarioOk){
+            System.out.println("Movimiento diario grabado con exito !!! ");
+        }else{
+            System.out.println("No se grabo el movimiento !!!");
+        }
     }
 
     public String leerPais(String complemento){

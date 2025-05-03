@@ -1,5 +1,6 @@
 package com.alura.conversormonedas.main;
 
+import com.alura.conversormonedas.controller.MovimientosDiarios;
 import com.alura.conversormonedas.controller.RutinasPais;
 import com.alura.conversormonedas.exception.ErrorEnCapturaException;
 import com.alura.conversormonedas.model.Pais;
@@ -19,6 +20,7 @@ public class MainConversorMonedas {
       Scanner leer = new Scanner(System.in);
       List<Pais> listaPaises = menu.cargarPaises();
       RutinasPais busqueda = new RutinasPais();
+
       String codeMoney1 = "COP";
       String codeMoney2 = "USD";
       String moneda1, moneda2 = "";
@@ -26,7 +28,7 @@ public class MainConversorMonedas {
       String paisDestino = "USD";
       String opcion = "";
       String input = "";
-      double valorConvertir=0;
+      double valorConvertir = 0;
       double factor = 0;
       int opc = 0;
 
@@ -37,9 +39,9 @@ public class MainConversorMonedas {
             try {
                opcion = leer.nextLine();
                opc = Integer.parseInt(opcion);
-               esValida = (opc == 1 || opc == 2 || opc == 3 ||opc == 9);
+               esValida = (opc >= 1 && opc <= 4) || opc == 9;
             } catch (InputMismatchException | NumberFormatException e) {
-               opc=0;
+               opc = 0;
                System.out.println("Dígite números enteros entre [1..3] ó 9=salir");
                break;
                //throw new ErrorEnCapturaException("Dígite números enteros entre 1 y 2 ó 9 ");
@@ -79,7 +81,7 @@ public class MainConversorMonedas {
                // validar paises repetidos
                if (!Objects.equals(codeMoney1, codeMoney2)) {
                   try {
-                     System.out.print("Valor a convertir, en "+codeMoney1+" :");
+                     System.out.print("Valor a convertir, en " + codeMoney1 + " :");
                      try {
                         input = leer.nextLine();
                         valorConvertir = Double.parseDouble(input);
@@ -98,26 +100,32 @@ public class MainConversorMonedas {
                }
                break;
             }
-            case 3:{
+            case 3: {
                boolean sigue = true;
-               String buscar="";
-               while (sigue){
+               String buscar = "";
+               while (sigue) {
                   buscar = busqueda.leerPais("con nombres similiares").trim();
-                  if (buscar.length()<2){
+                  if (buscar.length() < 2) {
                      System.out.println("Por favor dígite minimo 2 letras para la búsqueda ");
-                  }else{
-                     sigue=false;
+                  } else {
+                     sigue = false;
                   }
                } // wend
                List<Pais> listaSimilares = menu.buscarPaisesNombresSimilares(listaPaises, buscar);
                System.out.println("**Paises con nombres similares**");
-               if (listaSimilares.isEmpty()){
-                  System.out.println("No existen paises con nombre : "+buscar);
-               }else{
+               if (listaSimilares.isEmpty()) {
+                  System.out.println("No existen paises con nombre : " + buscar);
+               } else {
                   for (Pais pais : listaSimilares) {
-                     System.out.println("->"+pais.getCountry() + " " + pais.getCodeCurrency());
+                     System.out.println("->" + pais.getCountry() + " " + pais.getCodeCurrency());
                   }
                }
+               break;
+            }
+            case 4: {
+               // llamar a listar movimientos
+               MovimientosDiarios movi = new MovimientosDiarios();
+               movi.leerMovimientos();
                break;
             }
             case 9:
@@ -126,4 +134,9 @@ public class MainConversorMonedas {
          } //endcase
       } //endwhile
    }
+
+   public void imprime() {
+
+   }
+
 }
