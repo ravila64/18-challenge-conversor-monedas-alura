@@ -21,14 +21,14 @@ public class MainConversorMonedas {
       RutinasPais busqueda = new RutinasPais();
       String codeMoney1 = "COP";
       String codeMoney2 = "USD";
-      double valorConvertir;
-      double factor = 0;
       String moneda1, moneda2 = "";
-      int opc = 0;
       String paisFuente = "COP";
       String paisDestino = "USD";
       String opcion = "";
       String input = "";
+      double valorConvertir=0;
+      double factor = 0;
+      int opc = 0;
 
       while (opc != 9) {
          boolean esValida = false;
@@ -37,10 +37,10 @@ public class MainConversorMonedas {
             try {
                opcion = leer.nextLine();
                opc = Integer.parseInt(opcion);
-               esValida = (opc == 1 || opc == 2 || opc == 9);
+               esValida = (opc == 1 || opc == 2 || opc == 3 ||opc == 9);
             } catch (InputMismatchException | NumberFormatException e) {
-               System.out.println("Dígite números enteros entre 1 y 2 ó 9 ");
                opc=0;
+               System.out.println("Dígite números enteros entre [1..3] ó 9=salir");
                break;
                //throw new ErrorEnCapturaException("Dígite números enteros entre 1 y 2 ó 9 ");
             }
@@ -79,7 +79,7 @@ public class MainConversorMonedas {
                // validar paises repetidos
                if (!Objects.equals(codeMoney1, codeMoney2)) {
                   try {
-                     System.out.print("Valor a convertir : ");
+                     System.out.print("Valor a convertir, en "+codeMoney1+" :");
                      try {
                         input = leer.nextLine();
                         valorConvertir = Double.parseDouble(input);
@@ -95,6 +95,28 @@ public class MainConversorMonedas {
                   }
                } else {
                   System.out.println("Seleccione paises diferentes !!!");
+               }
+               break;
+            }
+            case 3:{
+               boolean sigue = true;
+               String buscar="";
+               while (sigue){
+                  buscar = busqueda.leerPais("con nombres similiares").trim();
+                  if (buscar.length()<2){
+                     System.out.println("Por favor dígite minimo 2 letras para la búsqueda ");
+                  }else{
+                     sigue=false;
+                  }
+               } // wend
+               List<Pais> listaSimilares = menu.buscarPaisesNombresSimilares(listaPaises, buscar);
+               System.out.println("**Paises con nombres similares**");
+               if (listaSimilares.isEmpty()){
+                  System.out.println("No existen paises con nombre : "+buscar);
+               }else{
+                  for (Pais pais : listaSimilares) {
+                     System.out.println("->"+pais.getCountry() + " " + pais.getCodeCurrency());
+                  }
                }
                break;
             }

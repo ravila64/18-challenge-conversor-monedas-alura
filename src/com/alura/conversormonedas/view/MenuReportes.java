@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuReportes {
@@ -35,8 +36,9 @@ public class MenuReportes {
         System.out.println("****Conversor de monedas****");
         System.out.println("1. Listado paises incluidos para conversión");
         System.out.println("2. Conversión de monedas");
+        System.out.println("3. Listar paises con nombres similares");
         System.out.println("9. Salir");
-        System.out.print("Digite opción [1..2] o [9.Salir] ");
+        System.out.print("Digite opción [1..3] o [9.Salir] ");
     }
 
     public void listarJsonDePaises( List<Pais> lista) {
@@ -44,14 +46,23 @@ public class MenuReportes {
         System.out.println("Cantidad de paises para conversion " + cantidadPaises);
         int conse = 1;
         for (Pais pais : lista) {
-            System.out.print(conse + "-(" +pais.getCodeCurrency()+")="+pais.getCountry()+" *** ");
+            System.out.print(conse + "-(" +pais.getCodeCurrency()+")="+pais.getCountry()+" *|* ");
             if (conse % 5 != 0) {
             }else {
                 System.out.println("_");
             }
-            //if (conse > 50) break;
             conse++;
         }
+    }
+
+    public List<Pais> buscarPaisesNombresSimilares(List<Pais> lista, String buscar){
+        List<Pais> similares=new ArrayList<>();
+        for (Pais similar : lista) {
+            if(similar.getCountry().contains(buscar)){
+                similares.add(similar);
+            }
+        }
+        return similares;
     }
 
 }
