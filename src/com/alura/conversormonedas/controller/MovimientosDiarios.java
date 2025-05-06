@@ -1,27 +1,68 @@
 package com.alura.conversormonedas.controller;
 
 import com.alura.conversormonedas.model.Moneda;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class MovimientosDiarios {
 
-   public boolean leerMovimientos() {
-      ObjectMapper objectMapper = new ObjectMapper();
-      Map<String, Moneda> diaro = new HashMap<>();
+   //public final String archivo="src/com/alura/conversormonedas/data/diario.json";
+   public final String archivo = "src/diario.json";
+   File file = null;
 
+   public void listarMovimientos() throws IOException {
+      Gson gson = new Gson();
+      try (FileReader reader = new FileReader(archivo)) {
+         Type listType = new TypeToken<List<Moneda>>() {
+         }.getType();
+         List<Moneda> monedas = gson.fromJson(reader, listType);
+
+         for (Moneda moneda : monedas) {
+            System.out.println(moneda.toString());
+         }
+
+      } catch (FileNotFoundException e) {
+         System.out.println(e.getMessage());
+      }
+   }
+
+   public boolean grabarMovimientos(Moneda nuevaMoneda) {
+      Gson gson = new Gson();
+      List<Moneda> monedas = new ArrayList<>();
       try {
-         File archivo = new File("src/com/alura/conversormonedas/data/movimientos.json");
-         if (archivo.exists()) {
-            diaro = objectMapper.readValue(archivo, Map.class);
+         file = new File(archivo);
+         if (file.exists()) {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            Type listType = new TypeToken<List<Moneda>>() {
+            }.getType();
+            monedas = gson.fromJson(reader, listType);
+            reader.close();
+         } else {
+            GuardarJson createFile = new GuardarJson();
+            createFile.guardarEnArchivo(nuevaMoneda);
+            System.out.println("Grabado 1era vez diario.json");
          }
       } catch (IOException e) {
-         System.out.println("Error al leer el archivo! " + e.getMessage());
+         System.out.println("Error al leer el archivo: " + e.getMessage());
+      }
+
+      // Agregar la nueva moneda
+      monedas.add(nuevaMoneda);
+
+      // Escribir el archivo actualizado
+      try (Writer writer = new FileWriter(file)) {
+         gson.toJson(monedas, writer);
+      } catch (IOException e) {
+         System.out.println("Error al escribir el archivo: " + e.getMessage());
       }
       return true;
    }
+
+
 }

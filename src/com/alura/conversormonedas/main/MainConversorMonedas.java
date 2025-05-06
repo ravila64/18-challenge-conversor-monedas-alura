@@ -2,7 +2,6 @@ package com.alura.conversormonedas.main;
 
 import com.alura.conversormonedas.controller.MovimientosDiarios;
 import com.alura.conversormonedas.controller.RutinasPais;
-import com.alura.conversormonedas.exception.ErrorEnCapturaException;
 import com.alura.conversormonedas.model.Pais;
 import com.alura.conversormonedas.view.MenuReportes;
 
@@ -15,7 +14,7 @@ import java.util.Scanner;
 
 public class MainConversorMonedas {
 
-   public static void main(String[] args) throws FileNotFoundException {
+   public static void main(String[] args) throws IOException {
       MenuReportes menu = new MenuReportes();
       Scanner leer = new Scanner(System.in);
       List<Pais> listaPaises = menu.cargarPaises();
@@ -49,11 +48,11 @@ public class MainConversorMonedas {
          } // end while
 
          switch (opc) {
-            case 1: {
+            case 1: { // listado paises incluidos en la conversion
                menu.listarJsonDePaises(listaPaises);
                break;
             }
-            case 2: {
+            case 2: { // listado paises con nombres similares
                paisFuente = busqueda.leerPais("Fuente");
                Pais paisOD = busqueda.busquedaPais(listaPaises, paisFuente);
                if (paisOD.getCountry() == null) {
@@ -100,7 +99,7 @@ public class MainConversorMonedas {
                }
                break;
             }
-            case 3: {
+            case 3: { // listar paises con nombres similares
                boolean sigue = true;
                String buscar = "";
                while (sigue) {
@@ -122,21 +121,18 @@ public class MainConversorMonedas {
                }
                break;
             }
-            case 4: {
+            case 4: { // listar movimientos diarios
                // llamar a listar movimientos
-               MovimientosDiarios movi = new MovimientosDiarios();
-               movi.leerMovimientos();
+               MovimientosDiarios listar = new MovimientosDiarios();
+               listar.listarMovimientos();
                break;
             }
+
             case 9:
                System.out.println("Fin aplicación");
                break;
          } //endcase
       } //endwhile
-   }
-
-   public void imprime() {
-
    }
 
 }

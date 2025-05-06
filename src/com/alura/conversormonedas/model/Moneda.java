@@ -20,8 +20,9 @@ public class Moneda {
       this.fecha = fecha;
    }
 
+   public Moneda() {
+   }
    // getters
-
    public String getBase_code() {
       return base_code;
    }
@@ -44,5 +45,17 @@ public class Moneda {
 
    public double getValorConversion() {
       return valorConversion;
+   }
+
+   @Override
+   public String toString() {
+      return "Moneda{" +
+            "base_code='" + base_code + '\'' +
+            ", target_code='" + target_code + '\'' +
+            ", conversion_rate=" + conversion_rate +
+            ", valorAConvertir=" + valorAConvertir +
+            ", valorConversion=" + valorConversion +
+            ", fecha='" + fecha + '\'' +
+            '}';
    }
 }

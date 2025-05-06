@@ -1,1 +1,8 @@
-{}
+  {
+  "base_code": "COP",
+  "target_code": "USD",
+  "conversion_rate": 0.0,
+  "valorAConvertir": 0.0,
+  "valorConversion": 0.0,
+  "fecha": "2025-05-03 10:10:05"
+  }
