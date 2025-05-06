@@ -50,11 +50,11 @@ public class Moneda {
    @Override
    public String toString() {
       return "Moneda{" +
-            "base_code='" + base_code + '\'' +
-            ", target_code='" + target_code + '\'' +
-            ", conversion_rate=" + conversion_rate +
-            ", valorAConvertir=" + valorAConvertir +
-            ", valorConversion=" + valorConversion +
+            "base='" + base_code + '\'' +
+            ", target='" + target_code + '\'' +
+            ", factor conversion=" + conversion_rate +
+            ", valor a convertir=" + valorAConvertir +
+            ", valor conversion=" + valorConversion +
             ", fecha='" + fecha + '\'' +
             '}';
    }

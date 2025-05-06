@@ -41,7 +41,7 @@ public class MainConversorMonedas {
                esValida = (opc >= 1 && opc <= 4) || opc == 9;
             } catch (InputMismatchException | NumberFormatException e) {
                opc = 0;
-               System.out.println("Dígite números enteros entre [1..3] ó 9=salir");
+               System.out.println("Dígite números enteros entre [1..4] ó 9=salir");
                break;
                //throw new ErrorEnCapturaException("Dígite números enteros entre 1 y 2 ó 9 ");
             }
@@ -110,12 +110,12 @@ public class MainConversorMonedas {
                      sigue = false;
                   }
                } // wend
-               List<Pais> listaSimilares = menu.buscarPaisesNombresSimilares(listaPaises, buscar);
+               List<Pais> listaSimilar = menu.buscarPaisesNombreSimilar(listaPaises, buscar);
                System.out.println("**Paises con nombres similares**");
-               if (listaSimilares.isEmpty()) {
+               if (listaSimilar.isEmpty()) {
                   System.out.println("No existen paises con nombre : " + buscar);
                } else {
-                  for (Pais pais : listaSimilares) {
+                  for (Pais pais : listaSimilar) {
                      System.out.println("->" + pais.getCountry() + " " + pais.getCodeCurrency());
                   }
                }

@@ -1,8 +1,6 @@
 # 18-challenge-conversor-monedas-alura
 
-<em> # TEMATICA </em>
-
-##Indice
+<em> TEMATICA </em>
 
 [Descripción proyecto](#descripción-proyecto) \
 [Como usar el programa](#como-usar-el-programa) \
@@ -15,22 +13,27 @@ Construir tu propio Conversor de Monedas.
 Aprenderás a realizar solicitudes a una API de tasas de cambio, a manipular datos JSON y,
 finalmente, a filtrar y mostrar las monedas de interés.
 
-Los pasos para completar este desafío se detallo:
-A) Configuración del Ambiente Java;
-B) Creación del Proyecto;
-C) Consumo de la API;
-D) Análisis de la Respuesta JSON;
-E) Filtro de Monedas;
+Los pasos para completar este desafío se detallo:\
+A) Configuración del Ambiente Java;\
+B) Creación del Proyecto;\
+C) Consumo de la API;\
+D) Análisis de la Respuesta JSON;\
+E) Filtro de Monedas;\
 F) Exibición de Resultados a los usuarios
+
 <h2>Como usar el programa</h2>
 ----------------------------
 **Conversor de monedas**
 1. Listado paises incluidos para conversión
 2. Conversión de monedas
 3. Listar paises con nombres similares
+4. Listar movimientos diarios
 9. Salir
 
-Digite opción [1..3] o [9.Salir] 1
+Digite opción [1..4] o [9.Salir] 1
+<h4>Explicación.</h4>
+Aqui puede digitar la opcion, dentro del rango permitido, si hay error
+de digitación se devuelve a leer opción.
 
 <h3>Al seleccionar opcion 1. Sale un listado asi:</h3>
 
@@ -44,7 +47,7 @@ Digite opción [1..3] o [9.Salir] 1
 asi.. hasta completar los paises, que maneja la API.
 
 <h3>opcion 2. Conversion de monedas</h3>
-Digite opción [1..3] o [9.Salir] 2
+Digite opción [1..4] o [9.Salir] 2
 
 Digite Pais Fuente :colombia \
 Pais{codeCurrency='COP', currencyName='Colombian Peso', country='Colombia'} \
@@ -54,9 +57,16 @@ Pais{codeCurrency='USD', currencyName='United States Dollar', country='Estados U
 A Codigo moneda :USD, pais :Estados Unidos \
 Valor a convertir, en COP :500000 
 
-API Key: Verified \
+Resultado.\
 Result :Currency[base_code=COP, target_code=USD, conversion_rate=2.3622E-4] \
-Conversion 500000,00  COP   Colombian Peso son 118,11  USD United States Dollar \
+Conversion 500000,00  COP   Colombian Peso son 118,11  USD United States Dollar
+<h4>Explicación.</h4>
+En la digitación o captura del pais, sea fuente o destino, se valida que el país, este el la tabla de conversiones.<br/> 
+No puede colocar paises repetidos, o nombres de paises que no esten. <br/>
+Ejemplo. Colombia, puede colocar colo, Colo, Colomb, col, Colombia, etc. <br/>
+El programa le pasa todo el texto a minúscula y mayúscula a la primera letra.<br/>
+Para el caso de Europa, donde hay 27 paises que utilizan el EURO, hay que digitar
+"European Union" o "union". 
 
 <h3>Opcion 3. Listar paises con nombres similares</h3> 
 
@@ -68,4 +78,12 @@ Dígite Pais con nombres similiares :pa
 ->Pakistan PKR \
 ->Paraguay PYG 
 
+<h3>Opcion 4. Listar movimientos diarios</h3>
+Digite opción [1..4] o [9.Salir] 4
+Moneda{base='COP', target='USD', factor conversion=2.3618E-4, valor a convertir=100000.0, valor conversion=23.618000000000002, fecha='2025-05-04 16:37:27'} <br/> 
+Moneda{base='COP', target='USD', factor conversion=2.3502E-4, valor a convertir=10000.0, valor conversion=2.3502, fecha='2025-05-06 10:18:53'} <br/>
+Moneda{base='EUR', target='USD', factor conversion=1.1321, valor a convertir=10000.0, valor conversion=11321.000000000002, fecha='2025-05-06 10:40:16'} <br/>
+Moneda{base='USD', target='AED', factor conversion=3.6725, valor a convertir=10000.0, valor conversion=36725.0, fecha='2025-05-06 11:00:23'} <br/>
+Lista todas las transacciones que se han realizado hasta el momento. <br/>
+En construccion listar transacciones por día. <br/>
 

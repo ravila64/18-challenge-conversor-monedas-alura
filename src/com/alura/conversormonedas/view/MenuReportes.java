@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,12 +35,15 @@ public class MenuReportes {
     public void mostrarOpciones() {
         System.out.println("----------------------------");
         System.out.println("****Conversor de monedas****");
-        System.out.println("1. Listado paises incluidos para conversión");
-        System.out.println("2. Conversión de monedas");
-        System.out.println("3. Listar paises con nombres similares");
-        System.out.println("4. Listar movimientos diarios");
-        System.out.println("9. Salir");
-        System.out.print("Digite opción [1..4] o [9.Salir] ");
+        String[] opciones= {"1. Listado paises incluidos para conversión",
+                            "2. Conversión de monedas",
+                            "3. Listar paises con nombres similares",
+                            "4. Listar movimientos diarios",
+                            "9. Salir"};
+        for (String opcion : opciones) {
+            System.out.println(opcion);
+        }
+        System.out.print("Digite opción [1.."+(opciones.length-1)+"] o [9.Salir] ");
     }
 
     public void listarJsonDePaises( List<Pais> lista) {
@@ -56,7 +60,7 @@ public class MenuReportes {
         }
     }
 
-    public List<Pais> buscarPaisesNombresSimilares(List<Pais> lista, String buscar){
+    public List<Pais> buscarPaisesNombreSimilar(List<Pais> lista, String buscar){
         List<Pais> similares=new ArrayList<>();
         for (Pais similar : lista) {
             if(similar.getCountry().contains(buscar)){

@@ -8,7 +8,6 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class MovimientosDiarios {
 
@@ -42,10 +41,6 @@ public class MovimientosDiarios {
             }.getType();
             monedas = gson.fromJson(reader, listType);
             reader.close();
-         } else {
-            GuardarJson createFile = new GuardarJson();
-            createFile.guardarEnArchivo(nuevaMoneda);
-            System.out.println("Grabado 1era vez diario.json");
          }
       } catch (IOException e) {
          System.out.println("Error al leer el archivo: " + e.getMessage());
