@@ -12,8 +12,7 @@ import java.util.Scanner;
 
 public class MovimientosDiarios {
 
-   //public final String archivo="src/com/alura/conversormonedas/data/diario.json";
-   public final String archivo = "src/diario.json";
+   public final String archivo = "src/com/alura/conversormonedas/data/diario.json";
    File file = null;
 
    public void listarMovimientos() throws IOException {
