@@ -36,7 +36,7 @@ F) Exibición de Resultados a los usuarios </br>
 
 Digite opción [1..4] o [9.Salir] 1
 <h4>Explicación.</h4>
-Aqui puede digitar la opcion, dentro del rango permitido, si hay error
+Aqui puede digitar la opcion, dentro del rango permitido, si hay error </br>
 de digitación se devuelve a leer opción. </br>
 [Inicio](#Inicio)
 
@@ -53,6 +53,7 @@ de digitación se devuelve a leer opción. </br>
 asi.. hasta completar los paises, que maneja la API.<br/>
 [link API-Exchangerate](https://www.exchangerate-api.com/docs/overview) </br>
 [Inicio](#Inicio)
+
 
 <h2>Conversión de monedas</h2>
 <h4>opcion 2.</h4>
