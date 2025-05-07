@@ -78,6 +78,7 @@ Ejemplo. Colombia, puede colocar colo, Colo, Colomb, col, Colombia, etc. <br/>
 El programa le pasa todo el texto a minúscula y mayúscula a la primera letra.<br/>
 Para el caso de Europa, donde hay 27 paises que utilizan el EURO, hay que digitar
 "European Union" o "union", para que tome el EURO. </br>
+
 [Inicio](#Inicio)
 
 <h2>Listar paises con nombres similares</h2>
@@ -92,6 +93,7 @@ Dígite Pais con nombres similiares :pa
 ->Paraguay PYG <br/>
 <h4>Explicación.</h4>
 Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/>
+
 [Inicio](#Inicio)
 
 <h2>Listar movimientos diarios</h2>
@@ -106,6 +108,7 @@ Lista todas las transacciones que se han realizado hasta el momento. <br/>
 <h4>Explicación.</h4>
 Con esta opcion usted vera todos los movimientos diarios, que estan en <br/>
 en los registros grabados, cuando se hace una conversión. <br/>
+
 [Inicio](#Inicio)
 
 **En construccion**  <br/>
@@ -122,8 +125,9 @@ en los registros grabados, cuando se hace una conversión. <br/>
 - API, Exchangerate API.
 - Gson, Api de Java, desarrollada por Google.
 - plugins de Intellij IDEA, para mostrar README.md
-- Trello (planeador de actividades a seguir de un proyecto) </br>
-  [Inicio](#Inicio)
+- Trello (planeador de actividades a seguir de un proyecto) 
+
+[Inicio](#Inicio)
 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) 
