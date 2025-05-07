@@ -32,7 +32,7 @@ public class MenuReportes {
         return  gson.fromJson(reader, listType);  // estaba listaMonedas;
     }
 
-    public void mostrarOpciones() {
+    public int mostrarOpciones() {
         System.out.println("----------------------------");
         System.out.println("****Conversor de monedas****");
         String[] opciones= {"1. Listado paises incluidos para conversión",
@@ -44,6 +44,7 @@ public class MenuReportes {
             System.out.println(opcion);
         }
         System.out.print("Digite opción [1.."+(opciones.length-1)+"] o [9.Salir] ");
+        return opciones.length-1;
     }
 
     public void listarJsonDePaises( List<Pais> lista) {

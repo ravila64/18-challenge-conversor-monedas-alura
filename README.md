@@ -1,11 +1,17 @@
-# 18-challenge-conversor-monedas-alura
+<h2>**18-challenge-conversor-monedas-alura**</h2>
 
 <em> TEMATICA </em>
 
 [Descripción proyecto](#descripción-proyecto) \
 [Como usar el programa](#como-usar-el-programa) \
-[Ayuda para usuarios](#ayuda-para-usuarios) \
-[Autores del proyecto](#autores-del-proyecto)
+[Listado paises incluidos para conversión](#listado-de-paises-incluidos-para-conversión) \
+[Conversión de monedas](#Conversión-de-monedas) \
+[Listar paises con nombres similares](#Listar-paises-con-nombres-similares)\
+[Listar movimientos diarios](#Listar-movimientos-diarios) \
+[Tecnologías utilizadas](#Tecnologías-utilizadas) \
+[Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) \
+[Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) 
+
 <h2>Descripción proyecto</h2>
 Construir tu propio Conversor de Monedas. <br/> 
 Aprenderás a realizar solicitudes a una API de tasas de cambio, a manipular datos JSON y,
@@ -32,7 +38,8 @@ Digite opción [1..4] o [9.Salir] 1
 Aqui puede digitar la opcion, dentro del rango permitido, si hay error
 de digitación se devuelve a leer opción.
 
-<h3>Al seleccionar opcion 1. Sale un listado asi:</h3>
+<h2>Listado paises incluidos para conversión</h2>
+<h4>Al seleccionar opcion 1. Sale un listado asi:</h4>
 
 1-(AED)=United Arab Emirates *|* 2-(AFN)=Afghanistan *|* 3-(ALL)=Albania *|* 4-(AMD)=Armenia *|* 5-(ANG)=Netherlands Antilles *|* _
 6-(AOA)=Angola *|* 7-(ARS)=Argentina *|* 8-(AUD)=Australia *|* 9-(AWG)=Aruba *|* 10-(AZN)=Azerbaijan *|* _
@@ -42,9 +49,10 @@ de digitación se devuelve a leer opción.
 26-(CAD)=Canada *|* 27-(CDF)=Democratic Republic of the Congo *|* 28-(CHF)=Switzerland *|* 29-(CLP)=Chile *|* 30-(CNY)=China *|* _
 31-(COP)=Colombia *|* 32-(CRC)=Costa Rica *|* 33-(CUP)=Cuba *|* 34-(CVE)=Cape Verde *|* 35-(CZK)=Czech Republic *|* _ <br/>
 asi.. hasta completar los paises, que maneja la API.<br/>
-[link Exchangerate API](https://www.exchangerate-api.com/docs/overview)
+[link API-Exchangerate](https://www.exchangerate-api.com/docs/overview)
 
-<h3>opcion 2. Conversion de monedas</h3>
+<h2>Conversión de monedas</h2>
+<h4>opcion 2.</h4>
 Digite opción [1..4] o [9.Salir] 2
 
 Digite Pais Fuente :colombia <br/>
@@ -67,7 +75,8 @@ El programa le pasa todo el texto a minúscula y mayúscula a la primera letra.<
 Para el caso de Europa, donde hay 27 paises que utilizan el EURO, hay que digitar
 "European Union" o "union", para que tome el EURO.
 
-<h3>Opcion 3. Listar paises con nombres similares</h3> 
+<h2>Listar paises con nombres similares</h2>
+<h4>Opcion 3.</h4> 
 
 Dígite Pais con nombres similiares :pa
 
@@ -79,7 +88,8 @@ Dígite Pais con nombres similiares :pa
 <h4>Explicación.</h4>
 Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/> 
 
-<h3>Opcion 4. Listar movimientos diarios</h3>
+<h2>Listar movimientos diarios</h2>
+<h4>Opcion 4.</h4>
 Digite opción [1..4] o [9.Salir] 4 <br/>
 Moneda{base='COP', target='USD', factor =2.3618E-4, valor a convertir=100000.0, valor conversion=23.618000000000002, fecha='2025-05-04 16:37:27'} <br/> 
 Moneda{base='COP', target='USD', factor =2.3502E-4, valor a convertir=10000.0, valor conversion=2.3502, fecha='2025-05-06 10:18:53'} <br/>
@@ -89,28 +99,32 @@ Lista todas las transacciones que se han realizado hasta el momento. <br/>
 
 <h4>Explicación.</h4>
 Con esta opcion usted vera todos los movimientos diarios, que estan en <br/>
-en los registros grabados, cuando se hace una conversion. <br/>
+en los registros grabados, cuando se hace una conversión. <br/>
 
 **En construccion**  <br/>
-- listar transacciones por día. <br/>
+- listar transacciones por día, dada una fecha. <br/>
 
+<h2>Tecnologías utilizadas</h2>
 
-<h3>Tecnologías utilizadas</h3>
 - Java
 - Manejo de API's
-- Postman  (pruebas de la API)
+- Postman  (para hacer las pruebas de la API)
 - Editor IDE, Intellij IDEA
 - git, github y terminal.
 - LURI, IA de ALURA-ONE, Sao Pablo, Brazil.
 - API, Exchangerate API.
-- Libreria Gson, de google.
+- Gson, Api de Java, desarrollada por Google.
 - plugins de Intellij IDEA, para mostrar README.md
+- Trello (planeador de actividades a seguir de un proyecto)
 
-<h3>Personas o entidades contribuyentes en el Proyecto</h3> 
-- Alura LATAN, ONE(Oracle Next Education)
+<h2>Personas o entidades contribuyentes en el Proyecto</h2>
+- Alura LATAM, ONE(Oracle Next Education) 
+- Profesora. Genesis Rendón </br>
+- Profesor. Bruno Dario Fernández Ellerbach
 
-<h3>Personas desarrolladores del Proyecto</h3>
-René Avila Alonso, desarrollador BackEnd
-May, 2025.
+<h2>Desarrolladores del Proyecto</h2>
+- René Avila Alonso.
+- Desarrollador BackEnd
+- May, 2025.
 
 

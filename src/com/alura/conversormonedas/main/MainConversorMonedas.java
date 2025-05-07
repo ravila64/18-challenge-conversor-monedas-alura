@@ -4,8 +4,6 @@ import com.alura.conversormonedas.controller.MovimientosDiarios;
 import com.alura.conversormonedas.controller.RutinasPais;
 import com.alura.conversormonedas.model.Pais;
 import com.alura.conversormonedas.view.MenuReportes;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -30,18 +28,19 @@ public class MainConversorMonedas {
       double valorConvertir = 0;
       double factor = 0;
       int opc = 0;
+      int ultimaOpc=1;
 
       while (opc != 9) {
          boolean esValida = false;
          while (!esValida) {
-            menu.mostrarOpciones();
+            ultimaOpc = menu.mostrarOpciones();
             try {
                opcion = leer.nextLine();
                opc = Integer.parseInt(opcion);
-               esValida = (opc >= 1 && opc <= 4) || opc == 9;
+               esValida = (opc >= 1 && opc <= ultimaOpc) || opc == 9;
             } catch (InputMismatchException | NumberFormatException e) {
                opc = 0;
-               System.out.println("Dígite números enteros entre [1..4] ó 9=salir");
+               System.out.println("Dígite números enteros entre [1.."+ultimaOpc+"] ó 9=salir");
                break;
                //throw new ErrorEnCapturaException("Dígite números enteros entre 1 y 2 ó 9 ");
             }
