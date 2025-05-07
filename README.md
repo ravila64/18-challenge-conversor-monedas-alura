@@ -1,5 +1,5 @@
 <h2>**18-challenge-conversor-monedas-alura**</h2>
-
+<h3>Inicio</h3>
 <em> TEMATICA </em>
 
 [Descripción proyecto](#descripción-proyecto) \
@@ -12,6 +12,7 @@
 [Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) \
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) 
 
+[Inicio](#Inicio)
 <h2>Descripción proyecto</h2>
 Construir tu propio Conversor de Monedas. <br/> 
 Aprenderás a realizar solicitudes a una API de tasas de cambio, a manipular datos JSON y,
@@ -23,8 +24,8 @@ B) Creación del Proyecto;\
 C) Consumo de la API;\
 D) Análisis de la Respuesta JSON;\
 E) Filtro de Monedas;\
-F) Exibición de Resultados a los usuarios
-
+F) Exibición de Resultados a los usuarios </br>
+[Inicio](#Inicio)
 <h2>Como usar el programa</h2>
 **Conversor de monedas**   <br/>
 1. Listado paises incluidos para conversión <br/>
@@ -36,7 +37,8 @@ F) Exibición de Resultados a los usuarios
 Digite opción [1..4] o [9.Salir] 1
 <h4>Explicación.</h4>
 Aqui puede digitar la opcion, dentro del rango permitido, si hay error
-de digitación se devuelve a leer opción.
+de digitación se devuelve a leer opción. </br>
+[Inicio](#Inicio)
 
 <h2>Listado paises incluidos para conversión</h2>
 <h4>Al seleccionar opcion 1. Sale un listado asi:</h4>
@@ -49,7 +51,8 @@ de digitación se devuelve a leer opción.
 26-(CAD)=Canada *|* 27-(CDF)=Democratic Republic of the Congo *|* 28-(CHF)=Switzerland *|* 29-(CLP)=Chile *|* 30-(CNY)=China *|* _
 31-(COP)=Colombia *|* 32-(CRC)=Costa Rica *|* 33-(CUP)=Cuba *|* 34-(CVE)=Cape Verde *|* 35-(CZK)=Czech Republic *|* _ <br/>
 asi.. hasta completar los paises, que maneja la API.<br/>
-[link API-Exchangerate](https://www.exchangerate-api.com/docs/overview)
+[link API-Exchangerate](https://www.exchangerate-api.com/docs/overview) </br>
+[Inicio](#Inicio)
 
 <h2>Conversión de monedas</h2>
 <h4>opcion 2.</h4>
@@ -73,7 +76,8 @@ No puede colocar paises repetidos, o nombres de paises que no esten. <br/>
 Ejemplo. Colombia, puede colocar colo, Colo, Colomb, col, Colombia, etc. <br/>
 El programa le pasa todo el texto a minúscula y mayúscula a la primera letra.<br/>
 Para el caso de Europa, donde hay 27 paises que utilizan el EURO, hay que digitar
-"European Union" o "union", para que tome el EURO.
+"European Union" o "union", para que tome el EURO. </br>
+[Inicio](#Inicio)
 
 <h2>Listar paises con nombres similares</h2>
 <h4>Opcion 3.</h4> 
@@ -86,7 +90,8 @@ Dígite Pais con nombres similiares :pa
 ->Pakistan PKR <br/>
 ->Paraguay PYG <br/>
 <h4>Explicación.</h4>
-Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/> 
+Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/>
+[Inicio](#Inicio)
 
 <h2>Listar movimientos diarios</h2>
 <h4>Opcion 4.</h4>
@@ -100,6 +105,7 @@ Lista todas las transacciones que se han realizado hasta el momento. <br/>
 <h4>Explicación.</h4>
 Con esta opcion usted vera todos los movimientos diarios, que estan en <br/>
 en los registros grabados, cuando se hace una conversión. <br/>
+[Inicio](#Inicio)
 
 **En construccion**  <br/>
 - listar transacciones por día, dada una fecha. <br/>
@@ -115,8 +121,9 @@ en los registros grabados, cuando se hace una conversión. <br/>
 - API, Exchangerate API.
 - Gson, Api de Java, desarrollada por Google.
 - plugins de Intellij IDEA, para mostrar README.md
-- Trello (planeador de actividades a seguir de un proyecto)
-
+- Trello (planeador de actividades a seguir de un proyecto) </br>
+  [Inicio](#Inicio)
+- 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) 
 - Profesora. Genesys Rondón </br>
@@ -126,6 +133,6 @@ en los registros grabados, cuando se hace una conversión. <br/>
 <h2>Desarrolladores del Proyecto</h2>
 - René Avila Alonso.
 - Desarrollador BackEnd
-- May, 2025.
-
+- May, 2025. </br>
+[Inicio](#Inicio)
 
