@@ -123,7 +123,7 @@ en los registros grabados, cuando se hace una conversión. <br/>
 - plugins de Intellij IDEA, para mostrar README.md
 - Trello (planeador de actividades a seguir de un proyecto) </br>
   [Inicio](#Inicio)
-- 
+
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) 
 - Profesora. Genesys Rondón </br>
@@ -134,5 +134,7 @@ en los registros grabados, cuando se hace una conversión. <br/>
 - René Avila Alonso.
 - Desarrollador BackEnd
 - May, 2025. </br>
+
 [Inicio](#Inicio)
+
 
