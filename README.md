@@ -119,8 +119,9 @@ en los registros grabados, cuando se hace una conversión. <br/>
 
 <h2>Personas o entidades contribuyentes en el Proyecto</h2>
 - Alura LATAM, ONE(Oracle Next Education) 
-- Profesora. Genesis Rendón </br>
+- Profesora. Genesys Rondón </br>
 - Profesor. Bruno Dario Fernández Ellerbach
+- Profesor. Eric Monné Fraga de Oliveira.
 
 <h2>Desarrolladores del Proyecto</h2>
 - René Avila Alonso.
