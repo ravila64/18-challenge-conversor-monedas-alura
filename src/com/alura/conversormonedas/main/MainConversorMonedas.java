@@ -126,7 +126,11 @@ public class MainConversorMonedas {
                listar.listarMovimientos();
                break;
             }
-
+            case 5:{ // listar mvtos diarios por rango de fechas
+               MovimientosDiarios listar = new MovimientosDiarios();
+               listar.listarMovimientosRangoFechas();
+               break;
+            }
             case 9:
                System.out.println("Fin aplicación");
                break;

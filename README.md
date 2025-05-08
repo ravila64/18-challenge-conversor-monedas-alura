@@ -18,14 +18,16 @@ Construir tu propio Conversor de Monedas. <br/>
 Aprenderás a realizar solicitudes a una API de tasas de cambio, a manipular datos JSON y,
 finalmente, a filtrar y mostrar las monedas de interés.<br/>
 
-Los pasos para completar este desafío se detallo:\
-A) Configuración del Ambiente Java;\
-B) Creación del Proyecto;\
-C) Consumo de la API;\
-D) Análisis de la Respuesta JSON;\
-E) Filtro de Monedas;\
-F) Exibición de Resultados a los usuarios </br>
+Los pasos para completar este desafío se detallo: <br/>
+A) Configuración del Ambiente Java; <br/>
+B) Creación del Proyecto; <br/>
+C) Consumo de la API; <br/>
+D) Análisis de la Respuesta JSON; <br/>
+E) Filtro de Monedas; <br/>
+F) Exibición de Resultados a los usuarios <br/>
+
 [Inicio](#Inicio)
+
 <h2>Como usar el programa</h2>
 **Conversor de monedas**   <br/>
 1. Listado paises incluidos para conversión <br/>

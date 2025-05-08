@@ -39,6 +39,7 @@ public class MenuReportes {
                             "2. Conversión de monedas",
                             "3. Listar paises con nombres similares",
                             "4. Listar movimientos diarios",
+                            "5. Listar movimientos de una fecha especifica",
                             "9. Salir"};
         for (String opcion : opciones) {
             System.out.println(opcion);
