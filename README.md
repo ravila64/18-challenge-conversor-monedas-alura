@@ -42,6 +42,7 @@ Digite opción [1..4] o [9.Salir] 1
 <h4>Explicación.</h4>
 Aqui puede digitar la opcion, dentro del rango permitido, si hay error </br>
 de digitación se devuelve a leer opción. </br>
+
 [Inicio](#Inicio)
 
 <h2>Listado paises incluidos para conversión</h2>
