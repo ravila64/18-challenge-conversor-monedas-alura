@@ -34,49 +34,78 @@ public class MovimientosDiarios {
       }
    }
 
+   public boolean validarFecha(String fecha) {
+      if (fecha.length() != 10) {
+         return false;
+      }
+      //                 en  fb  ma  ab  my  ju  jl  ag  sp  oc  nv  dc
+      int diasEnMes[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+      String year = fecha.substring(0, 4);
+      String month = fecha.substring(5, 7);
+      String day = fecha.substring(8, 10);
+      //System.out.println(year + " " + month + " " + day);
+      int year1 = Integer.parseInt(year);
+      int month1 = Integer.parseInt(month);
+      int day1 = Integer.parseInt(day);
+      boolean fechaOk = false;
+      if (year1 >= 2000 && month1 >= 1 && month1 <= 12 && day1 >= 1 && day1 <= 31) {
+         if (month1 == 2 && year1 % 4 == 0) {  // bisiesto
+            if (day1 <= diasEnMes[month1 - 1] + 1) {
+               fechaOk = true;
+            }
+         } else {
+            if (day1 <= diasEnMes[month1 - 1]) {
+               fechaOk = true;
+            }
+         }
+      }
+      return fechaOk;
+   }
+
    public void listarMovimientosRangoFechas() throws IOException, DateTimeParseException {
       Gson gson = new Gson();
       // Convertir los Strings a LocalDate
       Scanner scanner = new Scanner(System.in);
 
-      // Formato esperado: yyyy-MM-dd
-      System.out.print("Ingrese una fecha Inicial (yyyy-MM-dd): ");
-      String input = scanner.nextLine();
-      // Validar y convertir
-      LocalDate fechaI = LocalDate.parse(input);
-      // Usa el formato ISO por defecto: yyyy-MM-dd
-      // Si quieres devolver como String en otro formato:
-//      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//      String fechaInic = fechaI.format(formatter);
-//      System.out.println("Fecha inicial ingresada: " + fechaInic);
+      boolean esFechaCorrecta = false;
+      String input = "";
+      LocalDate fechaI = LocalDate.now();
+      LocalDate fechaF = LocalDate.now();
+      while (!esFechaCorrecta) {
+         System.out.print("Ingrese una fecha Inicial (yyyy-MM-dd): ");
+         input = scanner.nextLine().trim();
+         if (validarFecha(input)) {
+            fechaI = LocalDate.parse(input);
+            esFechaCorrecta = true;
+         } else {
+            System.out.println("Corregir fecha inicial errada:"+input);
+         }
+      }
 
-      System.out.print("Ingrese una fecha Final (yyyy-MM-dd): ");
-      input = scanner.nextLine();
-      // Validar y convertir
-      LocalDate fechaF = LocalDate.parse(input);
-      // Usa el formato ISO por defecto: yyyy-MM-dd
-      // Si quieres devolver como String en otro formato:
-      //formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//      String fechaFin = fechaF.format(formatter);
-//      System.out.println("Fecha Final ingresada: " + fechaFin);
+      esFechaCorrecta = false;
+      while (!esFechaCorrecta) {
+         System.out.print("Ingrese una fecha Final (yyyy-MM-dd): ");
+         input = scanner.nextLine().trim();
+         if (validarFecha(input)) {
+            fechaF = LocalDate.parse(input);
+            esFechaCorrecta = true;
+         }else {
+            System.out.println("Corregir fecha final errada :"+input);
+         }
+      }
 
-//      LocalDate fechaInicio = LocalDate.parse(fechaInic);
-//      LocalDate fechaFinal = LocalDate.parse(fechaFin);
-
+      System.out.println("Listado de movimientos entre "+fechaI+" hasta "+fechaF);
       try (FileReader reader = new FileReader(archivo)) {
          Type listType = new TypeToken<List<Moneda>>() {
          }.getType();
          List<Moneda> monedas = gson.fromJson(reader, listType);
-
          for (Moneda moneda : monedas) {
             // Verificar si está entre las fechas
-            String fechaMvto = moneda.getFecha().substring(0,10);
+            String fechaMvto = moneda.getFecha().substring(0, 10);
             LocalDate fechaComparar = LocalDate.parse(fechaMvto);
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            String fechaActual = fechaComparar.format(formatter);
             if ((fechaComparar.isEqual(fechaI) || fechaComparar.isAfter(fechaI)) &&
                   (fechaComparar.isEqual(fechaF) || fechaComparar.isBefore(fechaF))) {
-               System.out.println(moneda.toString());
+               System.out.println(moneda);   // el toma el .toString()
             }
          }
       }

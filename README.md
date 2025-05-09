@@ -8,6 +8,7 @@
 [Conversión de monedas](#Conversión-de-monedas) \
 [Listar paises con nombres similares](#Listar-paises-con-nombres-similares)\
 [Listar movimientos diarios](#Listar-movimientos-diarios) \
+[Listar movimientos de una fecha especifica](#Listar-movimientos-de-una-fecha-especifica) \
 [Tecnologías utilizadas](#Tecnologías-utilizadas) \
 [Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) \
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) 
@@ -34,6 +35,7 @@ F) Exibición de Resultados a los usuarios <br/>
 2. Conversión de monedas <br/>
 3. Listar paises con nombres similares <br/>
 4. Listar movimientos diarios <br/>
+5. Listar movimientos de una fecha especifica </br>
 9. Salir <br/>
 
 Digite opción [1..4] o [9.Salir] 1
@@ -113,8 +115,19 @@ en los registros grabados, cuando se hace una conversión. <br/>
 
 [Inicio](#Inicio)
 
-**En construccion**  <br/>
-- listar transacciones por día, dada una fecha. <br/>
+<h2>Listar movimientos de una fecha especifica</h2>
+<h4>Opcion 5.</h4>
+Digite opción [1..5] o [9.Salir] 5 </br>
+
+Ingrese una fecha Inicial (yyyy-MM-dd): 2025-05-04 </br>
+Ingrese una fecha Final (yyyy-MM-dd): 2025-05-30 </br>
+Resultado: </br>
+Listado de movimientos entre 2025-05-04 hasta 2025-05-30 </br>
+Moneda{base='COP', target='USD', factor=2.3618E-4, valor convertir=100000.0, valor conversion=23.618000000000002, fecha='2025-05-04 16:37:27'} </br>
+Moneda{base='COP', target='USD', factor=2.3502E-4, valor convertir=10000.0, valor conversion=2.3502, fecha='2025-05-06 10:18:53'} </br>
+Moneda{base='EUR', target='USD', factor=1.1321, valor convertir=10000.0, valor conversion=11321.000000000002, fecha='2025-05-06 10:40:16'} </br>
+Moneda{base='USD', target='AED', factor=3.6725, valor convertir=10000.0, valor conversion=36725.0, fecha='2025-05-06 11:00:23'} </br>
+[Inicio](#Inicio)
 
 <h2>Tecnologías utilizadas</h2>
 
