@@ -7,8 +7,8 @@
 [Listado paises incluidos para conversión](#listado-de-paises-incluidos-para-conversión) \
 [Conversión de monedas](#Conversión-de-monedas) \
 [Listar paises con nombres similares](#Listar-paises-con-nombres-similares)\
-[Listar movimientos diarios](#Listar-movimientos-diarios) \
-[Listar movimientos de una fecha especifica](#Listar-movimientos-de-una-fecha-especifica) \
+[Listar registros con marca de tiempo](#Listar-registros-con-marca-de-tiempo) \
+[Listar registros de una fecha especifica](#Listar-registros-de-una-fecha-especifica) \
 [Tecnologías utilizadas](#Tecnologías-utilizadas) \
 [Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) \
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) 
@@ -101,7 +101,7 @@ Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/>
 
 [Inicio](#Inicio)
 
-<h2>Listar movimientos diarios</h2>
+<h2>Listar registros con marca de tiempo</h2>
 <h4>Opcion 4.</h4>
 Digite opción [1..4] o [9.Salir] 4 <br/>
 Moneda{base='COP', target='USD', factor =2.3618E-4, valor a convertir=100000.0, valor conversion=23.618000000000002, fecha='2025-05-04 16:37:27'} <br/> 
@@ -116,7 +116,7 @@ en los registros grabados, cuando se hace una conversión. <br/>
 
 [Inicio](#Inicio)
 
-<h2>Listar movimientos de una fecha especifica</h2>
+<h2>Listar registros de una fecha especifica</h2>
 <h4>Opcion 5.</h4>
 Digite opción [1..5] o [9.Salir] 5 </br>
 

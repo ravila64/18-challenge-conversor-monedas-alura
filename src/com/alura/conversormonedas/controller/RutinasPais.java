@@ -83,10 +83,11 @@ public class RutinasPais {
         System.out.printf(str,valorConvertir, code1, moneda1, totalConversion, code2, moneda2).toString();
         Moneda moneda = new Moneda(code1,code2, factor, valorConvertir, totalConversion, fechaHoraCadena);
         boolean diarioOk= grabar.grabarMovimientos(moneda);
+        System.out.println("");
         if(diarioOk){
-            System.out.println("Movimiento diario grabado con exito !!! ");
+            System.out.println("Registro diario grabado con exito !!! ");
         }else{
-            System.out.println("No se grabo el movimiento !!!");
+            System.out.println("No se grabo el registro !!!");
         }
     }
 

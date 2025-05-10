@@ -38,8 +38,8 @@ public class MenuReportes {
         String[] opciones= {"1. Listado paises incluidos para conversión",
                             "2. Conversión de monedas",
                             "3. Listar paises con nombres similares",
-                            "4. Listar movimientos diarios",
-                            "5. Listar movimientos de una fecha especifica",
+                            "4. Listar registros con marca de tiempo",
+                            "5. Listar registros de una fecha especifica",
                             "9. Salir"};
         for (String opcion : opciones) {
             System.out.println(opcion);
