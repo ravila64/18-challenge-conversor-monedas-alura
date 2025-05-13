@@ -2,6 +2,8 @@
 <h3>Inicio</h3>
 <em> TEMATICA </em>
 
+[Como accesar la APIKEY](#como-accesar-la-apikey) 
+
 [Descripción proyecto](#descripción-proyecto) \
 [Como usar el programa](#como-usar-el-programa) \
 [Listado paises incluidos para conversión](#listado-de-paises-incluidos-para-conversión) \
@@ -12,6 +14,20 @@
 [Tecnologías utilizadas](#Tecnologías-utilizadas) \
 [Personas o entidades contribuyentes en el Proyecto](#Personas-o-entidades-contribuyentes-en-el-Proyecto) \
 [Desarrolladores del Proyecto](#Desarrolladores-del-Proyecto) 
+
+<h2>Como accesar la APIKEY</h2>
+En el modulo RutinasPais.java esta el acceso a la APIKEY <br/>
+``
+String api_key = System.getenv("API_KEY_EXCHANGERATE");
+``
+En la cual se utilizo con una variable del sistema (de entorno). <br/>
+Ustedes para la prueba de funcionamiento asignan a la variable <br/>
+``
+String api_key="su_api_key"; 
+``
+que generarón. <br/>
+El programa principal esta en el package main <br/> 
+
 
 [Inicio](#Inicio)
 <h2>Descripción proyecto</h2>
