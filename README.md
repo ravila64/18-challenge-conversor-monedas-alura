@@ -119,7 +119,7 @@ Se puede digitar como minimo 2 caracteres del nombre del pais a BUSCAR <br/>
 
 <h2>Listar registros con marca de tiempo</h2>
 <h4>Opcion 4.</h4>
-Digite opción [1..4] o [9.Salir] 4 <br/>
+Digite opción [1..5] o [9.Salir] 4 <br/>
 Moneda{base='COP', target='USD', factor =2.3618E-4, valor a convertir=100000.0, valor conversion=23.618000000000002, fecha='2025-05-04 16:37:27'} <br/> 
 Moneda{base='COP', target='USD', factor =2.3502E-4, valor a convertir=10000.0, valor conversion=2.3502, fecha='2025-05-06 10:18:53'} <br/>
 Moneda{base='EUR', target='USD', factor =1.1321, valor a convertir=10000.0, valor conversion=11321.000000000002, fecha='2025-05-06 10:40:16'} <br/>
