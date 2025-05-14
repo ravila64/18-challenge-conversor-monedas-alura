@@ -54,7 +54,7 @@ F) Exibición de Resultados a los usuarios <br/>
 5. Listar movimientos de una fecha especifica </br>
 9. Salir <br/>
 
-Digite opción [1..4] o [9.Salir] 1
+Digite opción [1..5] o [9.Salir] 1
 <h4>Explicación.</h4>
 Aqui puede digitar la opcion, dentro del rango permitido, si hay error </br>
 de digitación se devuelve a leer opción. </br>
@@ -78,7 +78,7 @@ asi.. hasta completar los paises, que maneja la API.<br/>
 
 <h2>Conversión de monedas</h2>
 <h4>opcion 2.</h4>
-Digite opción [1..4] o [9.Salir] 2
+Digite opción [1..5] o [9.Salir] 2
 
 Digite Pais Fuente :colombia <br/>
 Pais{codeCurrency='COP', currencyName='Colombian Peso', country='Colombia'} <br/>
